@@ -15,7 +15,16 @@ public class HowTo extends AppCompatActivity {
         setContentView(R.layout.activity_how_to);
         Button b5 = findViewById(R.id.howto);
         b5.setBackgroundResource(R.drawable.menu_hamber2);
+
+
     }
+
+    public void OnClick_editprofile(View view){
+        Intent intent = new Intent(HowTo.this,Edit_profile.class);
+        startActivity(intent);
+    }
+
+
     public void btnhome(View v){
         Intent mainIntent = new Intent(HowTo.this, Index.class);
         startActivity(mainIntent); finish();
