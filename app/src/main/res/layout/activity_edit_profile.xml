@@ -23,19 +23,6 @@
                 android:background="@drawable/b4"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorAccent"
-                    android:gravity="center_horizontal"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:text="Edit Profile"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
                 <ImageView
                     android:id="@+id/imageView9"
                     android:layout_width="236dp"

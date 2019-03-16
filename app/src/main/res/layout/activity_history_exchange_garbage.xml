@@ -21,20 +21,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorAccent"
-                    android:gravity="left|center_horizontal"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="15dp"
-                    android:paddingBottom="15dp"
-                    android:text="History exchange garbage"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
                     android:id="@+id/textView12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
