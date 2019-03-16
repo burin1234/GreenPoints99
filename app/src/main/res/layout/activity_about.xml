@@ -36,7 +36,8 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="About" />
+            android:text="ป. การแลกขยะ"
+            android:textSize="24sp" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

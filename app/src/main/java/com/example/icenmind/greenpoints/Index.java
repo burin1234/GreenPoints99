@@ -35,7 +35,7 @@ public class Index extends AppCompatActivity {
         setContentView(R.layout.activity_index);
 
         Button b1 = findViewById(R.id.homes);
-        b1.setBackgroundColor(Color.parseColor("#feed7d"));
+        b1.setBackgroundResource(R.drawable.menu_home2);
 
         listEX.add("ประเภท");
         moneyEX.add("ขีด : แต้ม");

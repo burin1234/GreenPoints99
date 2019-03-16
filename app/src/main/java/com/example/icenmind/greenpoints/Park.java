@@ -16,7 +16,7 @@ public class Park extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_park);
         Button b2 = findViewById(R.id.park);
-        b2.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        b2.setBackgroundResource(R.drawable.menu_park2);
     }
     public void btnhome(View v){
         Intent mainIntent = new Intent(Park.this, Index.class);

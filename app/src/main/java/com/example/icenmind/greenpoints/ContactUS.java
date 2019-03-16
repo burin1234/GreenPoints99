@@ -14,7 +14,7 @@ public class ContactUS extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_us);
         Button b4 = findViewById(R.id.contactus);
-        b4.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        b4.setBackgroundResource(R.drawable.menu_histroly_usepoint2);
     }
     public void btnhome(View v){
         Intent mainIntent = new Intent(ContactUS.this, Index.class);

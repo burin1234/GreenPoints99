@@ -20,7 +20,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:gravity="top"
             android:orientation="horizontal">
 
@@ -29,12 +29,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
-                android:background="@drawable/home_gravity"
+                android:background="@drawable/menu_home"
                 android:minHeight="60dp"
                 android:onClick="btnhome"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:textColor="#e8e9e9"
+                android:textColor="@android:color/black"
                 android:textSize="8sp" />
 
             <Button
@@ -42,13 +40,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
-                android:background="#234d20"
-                android:drawableTop="@drawable/parkwhite"
+                android:background="@drawable/menu_park"
                 android:minHeight="60dp"
                 android:onClick="btnpark"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:text="PARK"
                 android:textColor="#e8e9e9"
                 android:textSize="8sp" />
 
@@ -57,13 +51,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
-                android:background="#234d20"
-                android:drawableTop="@drawable/aboutuswhite"
+                android:background="@drawable/menu_exgar"
                 android:minHeight="60dp"
                 android:onClick="btnabout"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:text="history                 Exchange garbage"
                 android:textColor="#e8e9e9"
                 android:textSize="8sp" />
 
@@ -72,13 +62,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
-                android:background="#234d20"
-                android:drawableTop="@drawable/email"
+                android:background="@drawable/menu_histroly_usepoint"
                 android:minHeight="60dp"
                 android:onClick="btncontactus"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:text="History_usage_point"
                 android:textColor="#e8e9e9"
                 android:textSize="8sp" />
 
@@ -87,13 +73,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
-                android:background="#234d20"
-                android:drawableTop="@drawable/conversation"
+                android:background="@drawable/menu_hamber"
                 android:minHeight="60dp"
                 android:onClick="btnhowto"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:text="HOW TO"
                 android:textColor="#e8e9e9"
                 android:textSize="8sp" />
 

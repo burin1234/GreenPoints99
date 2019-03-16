@@ -14,7 +14,7 @@ public class HowTo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_how_to);
         Button b5 = findViewById(R.id.howto);
-        b5.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        b5.setBackgroundResource(R.drawable.menu_hamber2);
     }
     public void btnhome(View v){
         Intent mainIntent = new Intent(HowTo.this, Index.class);

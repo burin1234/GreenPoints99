@@ -14,7 +14,7 @@ public class About extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         Button b3 = findViewById(R.id.about);
-        b3.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        b3.setBackgroundResource(R.drawable.menu_exgar2);
     }
     public void btnhome(View v){
         Intent mainIntent = new Intent(About.this, Index.class);
