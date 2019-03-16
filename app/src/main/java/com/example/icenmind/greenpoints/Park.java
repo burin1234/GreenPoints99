@@ -1,14 +1,10 @@
 package com.example.icenmind.greenpoints;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class Park extends AppCompatActivity {
     @Override
@@ -27,15 +23,15 @@ public class Park extends AppCompatActivity {
         startActivity(mainIntent); finish();
     }
     public void btnabout(View v){
-        Intent mainIntent = new Intent(Park.this, About.class);
+        Intent mainIntent = new Intent(Park.this, history_exchange_garbage.class);
         startActivity(mainIntent); finish();
     }
     public void btncontactus(View v){
-        Intent mainIntent = new Intent(Park.this, ContactUS.class);
+        Intent mainIntent = new Intent(Park.this, history_usepoint.class);
         startActivity(mainIntent); finish();
     }
     public void btnhowto(View v){
-        Intent mainIntent = new Intent(Park.this, HowTo.class);
+        Intent mainIntent = new Intent(Park.this, menuother.class);
         startActivity(mainIntent); finish();
     }
 

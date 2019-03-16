@@ -1,24 +1,15 @@
 package com.example.icenmind.greenpoints;
 
-import android.app.ActivityManager;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
-import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.GridLayout;
-import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,15 +58,15 @@ public class Index extends AppCompatActivity {
         startActivity(mainIntent);
     }
     public void btnabout(View v){
-        Intent mainIntent = new Intent(Index.this, About.class);
+        Intent mainIntent = new Intent(Index.this, history_exchange_garbage.class);
         startActivity(mainIntent);
     }
     public void btncontactus(View v){
-        Intent mainIntent = new Intent(Index.this, ContactUS.class);
+        Intent mainIntent = new Intent(Index.this, history_usepoint.class);
         startActivity(mainIntent);
     }
     public void btnhowto(View v){
-        Intent mainIntent = new Intent(Index.this, HowTo.class);
+        Intent mainIntent = new Intent(Index.this, menuother.class);
         startActivity(mainIntent);
     }
 

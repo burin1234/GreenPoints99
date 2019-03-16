@@ -24,9 +24,11 @@
                     android:id="@+id/textView6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
                     android:gravity="center_horizontal"
                     android:padding="10dp"
                     android:text="Participating parks"
+                    android:textColor="@android:color/background_light"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

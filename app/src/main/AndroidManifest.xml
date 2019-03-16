@@ -25,9 +25,9 @@
         <activity android:name=".Index" />
         <activity android:name=".Indexmenu" />
         <activity android:name=".Park" />
-        <activity android:name=".About" />
-        <activity android:name=".ContactUS" />
-        <activity android:name=".HowTo" />
+        <activity android:name=".history_exchange_garbage" />
+        <activity android:name=".history_usepoint" />
+        <activity android:name=".menuother" />
         <activity android:name=".Login" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".preview_park_Activity" />
