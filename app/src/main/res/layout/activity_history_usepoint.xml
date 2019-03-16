@@ -36,7 +36,17 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Contact us" />
+            android:padding="15dp"
+            android:text="Goods and Services"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="444dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -3,13 +3,23 @@ package com.example.icenmind.greenpoints;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,19 +27,33 @@ import java.util.List;
 public class Index extends AppCompatActivity {
 
     private List<String> ListRe = new ArrayList();
+    List<String> listEXhead = new ArrayList<>();
+    List<String> moneyEXhead = new ArrayList<>();
     List<String> listEX = new ArrayList<>();
     List<String> moneyEX = new ArrayList<>();
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index);
 
+        FirebaseApp.initializeApp(this);
+
+                    Log.e("test", "login isSuccessful");
+                    FirebaseDatabase database = FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
+                    DatabaseReference myRef = database.getReference("RateExchange");
+                    for(int i = 0 ; i < 3 ; i++){
+                    DatabaseReference stu1 = myRef.child("126");
+                    stu1.child("id").setValue("000");
+                    stu1.child("name").setValue("oooooooooo");
+                    stu1.child("email").setValue("oooooo@.ac.th");}
+
         Button b1 = findViewById(R.id.homes);
         b1.setBackgroundResource(R.drawable.menu_home2);
 
-        listEX.add("ประเภท");
-        moneyEX.add("ขีด : แต้ม");
+        listEXhead.add("ประเภท");
+        moneyEXhead.add("ขีด : แต้ม");
 
         listEX.add("ขวดพลาสติก");
         moneyEX.add("3");
@@ -41,6 +65,9 @@ public class Index extends AppCompatActivity {
         moneyEX.add("1");
 
 
+        ListView listViewhead = findViewById(R.id.list_rate_garbage_head);
+        layout_rate_garbage Name_unithead = new layout_rate_garbage(getApplicationContext(),listEXhead,moneyEXhead);
+        listViewhead.setAdapter( Name_unithead);
         ListView listView = findViewById(R.id.list_rate_garbage);
         layout_rate_garbage Name_unit = new layout_rate_garbage(getApplicationContext(),listEX,moneyEX);
         listView.setAdapter( Name_unit);

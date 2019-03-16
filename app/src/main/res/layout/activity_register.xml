@@ -27,12 +27,11 @@
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorAccent"
                     android:gravity="center_horizontal"
                     android:paddingTop="10dp"
                     android:paddingBottom="5dp"
                     android:text="REGISTER"
-                    android:textColor="@android:color/background_light"
+                    android:textColor="@android:color/holo_green_dark"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 

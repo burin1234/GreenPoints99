@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.icenmind.greenpoints">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature
@@ -32,7 +32,9 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".preview_park_Activity" />
         <activity android:name=".layout_rate_garbage" />
-        <activity android:name=".Edit_profile"></activity>
+        <activity android:name=".Edit_profile" />
+        <activity android:name=".layout_history_exchange_garbage" />
+        <activity android:name=".layout_goods_and_services"></activity>
     </application>
 
 </manifest>

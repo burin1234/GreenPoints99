@@ -183,6 +183,15 @@
                         android:orientation="vertical">
 
                         <ListView
+                            android:id="@+id/list_rate_garbage_head"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="0dp"
+                            android:background="@android:color/holo_orange_light">
+
+                        </ListView>
+
+                        <ListView
                             android:id="@+id/list_rate_garbage"
                             android:layout_width="match_parent"
                             android:layout_height="275dp"
