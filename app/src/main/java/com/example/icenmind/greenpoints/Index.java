@@ -40,14 +40,7 @@ public class Index extends AppCompatActivity {
 
         FirebaseApp.initializeApp(this);
 
-                    Log.e("test", "login isSuccessful");
-                    FirebaseDatabase database = FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
-                    DatabaseReference myRef = database.getReference("RateExchange");
-                    for(int i = 0 ; i < 3 ; i++){
-                    DatabaseReference stu1 = myRef.child("126");
-                    stu1.child("id").setValue("000");
-                    stu1.child("name").setValue("oooooooooo");
-                    stu1.child("email").setValue("oooooo@.ac.th");}
+
 
         Button b1 = findViewById(R.id.homes);
         b1.setBackgroundResource(R.drawable.menu_home2);
@@ -65,6 +58,20 @@ public class Index extends AppCompatActivity {
         moneyEX.add("1");
 
 
+//        Log.e("test", "login isSuccessful");
+//        FirebaseDatabase database = FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
+//        DatabaseReference myRef = database.getReference("RateExchange");
+//        for(int i = 0 ; i < listEX.size() ; i++){
+//            DatabaseReference stu1 = myRef.child(""+(i+1));
+//            stu1.child("Type").setValue(""+listEX.get(i));
+//            stu1.child("Point").setValue(""+moneyEX.get(i));}
+        Log.e("test", "Get Rate Exchange isSuccessful");
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
+        DatabaseReference myRef = database.getReference("RateExchange");
+        for(int i = 0 ; i < listEX.size() ; i++){
+            DatabaseReference stu1 = myRef.child(""+(i+1));
+            stu1.child("Type").setValue(""+listEX.get(i));
+            stu1.child("Point").setValue(""+moneyEX.get(i));}
         ListView listViewhead = findViewById(R.id.list_rate_garbage_head);
         layout_rate_garbage Name_unithead = new layout_rate_garbage(getApplicationContext(),listEXhead,moneyEXhead);
         listViewhead.setAdapter( Name_unithead);
