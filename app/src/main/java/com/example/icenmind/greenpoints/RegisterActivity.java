@@ -2,18 +2,30 @@ package com.example.icenmind.greenpoints;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.nfc.Tag;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -34,11 +46,12 @@ public class RegisterActivity extends AppCompatActivity {
     private  String username="";
     private  String password="";
     private  String confirmpassword="";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+
 
 /*------------------------------------------------------------------------------------------------------------------*/
         Button btnSignup = (Button) findViewById(R.id.btn_Signup);
@@ -115,6 +128,35 @@ public class RegisterActivity extends AppCompatActivity {
                     Intent intent = new Intent(RegisterActivity.this,Login.class);
                     startActivity(intent);
                 }
+
+
+                Log.e("test", "login isSuccessful");
+                FirebaseDatabase database = FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
+                DatabaseReference user = database.getReference("Users");
+                DatabaseReference id = user.child("10000001");
+                id.child("Password").setValue(""+password);
+                id.child("userType").setValue("1");
+                id.child("Username").setValue(""+username);
+
+                FirebaseDatabase databasea = FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
+                DatabaseReference tourist = databasea.getReference("Tourist");
+                DatabaseReference tid = tourist.child("10000001");
+                tid.child("Birthday").setValue(""+Birthday);
+                tid.child("Email").setValue(""+email);
+                String genders = null;
+                if(genderRa1.isChecked()){ genders = genderRa1.getText().toString();}
+                    else if(genderRa2.isChecked()){ genders = genderRa2.getText().toString();}
+                tid.child("Gender").setValue(""+genders);
+                tid.child("FirstName").setValue(""+FirstName);
+                tid.child("LastName").setValue(""+LastName);
+
+                //Photo Upload
+
+                //end Photo Upload
+
+                tid.child("Point").setValue("0");
+                tid.child("Tel").setValue(""+tel);
+
             }
 
         });
@@ -225,13 +267,59 @@ public class RegisterActivity extends AppCompatActivity {
             ImageView img = (ImageView) findViewById(R.id.img_user);
             img.setVisibility(View.VISIBLE);
             img.setImageBitmap(bmp);
+            Toast.makeText(this, "path"+img.toString(), Toast.LENGTH_LONG).show();
+            Log.e("","");
         }
     }
 
-/*  public void OnClick_sign_up(View view){
-        Intent intent = new Intent(RegisterActivity.this,Login.class);
-        startActivity(intent);
-    }*/
+//  public void OnClick_sign_up(View view){
+//      EditText FirstNames = findViewById(R.id.txtFirstName);
+//      FirstName = FirstNames.getText().toString();
+//
+//      EditText LNames = findViewById(R.id.txtLastName);
+//      LastName = LNames.getText().toString();
+//
+//      RadioGroup gender = findViewById(R.id.gender);
+//      RadioButton genderRa1 = findViewById(R.id.m);
+//      RadioButton genderRa2 = findViewById(R.id.fm);
+//      //intent.putExtra("Choice", Ra3.getText().toString());
+//
+//      EditText bd = findViewById(R.id.txtBirthday);
+//      Birthday = bd.getText().toString();
+//
+//      EditText tell = findViewById(R.id.txttel);
+//      tel = tell.getText().toString();
+//
+//      EditText emails = findViewById(R.id.txtmail);
+//      email = emails.getText().toString();
+//
+//      EditText usernames = findViewById(R.id.txtusername);
+//      username = usernames.getText().toString();
+//
+//      EditText passwords = findViewById(R.id.txtpassword);
+//      password = passwords.getText().toString();
+//
+//      EditText confirmpasswords = findViewById(R.id.txtconfirmpass);
+//      confirmpassword = confirmpasswords.getText().toString();
+//
+//      Log.e("test", "login isSuccessful");
+//      FirebaseDatabase database = FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
+//      DatabaseReference user = database.getReference("Users");
+//      DatabaseReference id = user.child("10000001");
+//      id.child("Password").setValue(""+password);
+//      id.child("userType").setValue("1");
+//      id.child("Username").setValue(""+username);
+//
+//      DatabaseReference tourist = database.getReference("Users");
+//      DatabaseReference tid = tourist.child("10000001");
+//      tid.child("Birthday").setValue(""+Birthday);
+//      tid.child("Email").setValue(""+email);
+//      tid.child("gender").setValue("");
+//
+////      stu1.child("Point").setValue("");
+//        Intent intent = new Intent(RegisterActivity.this,Login.class);
+//        startActivity(intent);
+//    }
 
 
 }

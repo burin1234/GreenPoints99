@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.icenmind.greenpoints.ClassAll.Rate_exchange;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
@@ -35,6 +36,7 @@ public class Index extends AppCompatActivity {
     List<String> moneyEXhead = new ArrayList<>();
     List<String> listEX = new ArrayList<>();
     List<String> moneyEX = new ArrayList<>();
+    List<Rate_exchange> rate = new ArrayList<>();
     private FirebaseAuth mAuth;
 
     @Override
@@ -52,16 +54,6 @@ public class Index extends AppCompatActivity {
         listEXhead.add("ประเภท");
         moneyEXhead.add("ขีด : แต้ม");
 
-        listEX.add("ขวดพลาสติก");
-        moneyEX.add("3");
-
-        listEX.add("ขวดแก้ว");
-        moneyEX.add("6");
-
-        listEX.add("อื่นๆ");
-        moneyEX.add("1");
-
-
 //        Log.e("test", "login isSuccessful");
 //        FirebaseDatabase database = FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
 //        DatabaseReference myRef = database.getReference("RateExchange");
@@ -77,21 +69,23 @@ public class Index extends AppCompatActivity {
         query1.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot ds : dataSnapshot.getChildren()){
-                    Log.d("test", ds.getKey() + " => " +
-                            ds.child("Point").getValue());
+                for (DataSnapshot ds : dataSnapshot.getChildren()){listEX.add(ds.child("Type").getValue().toString()+"");
+                    moneyEX.add(Double.parseDouble(ds.child("Point").getValue().toString())+"");
                 }
+                ListView listView = findViewById(R.id.list_rate_garbage);
+                layout_rate_garbage Name_unit = new layout_rate_garbage(getApplicationContext(),listEX,moneyEX);
+                listView.setAdapter( Name_unit);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
+        Log.e("size ",rate.size()+"");
+
         ListView listViewhead = findViewById(R.id.list_rate_garbage_head);
         layout_rate_garbage Name_unithead = new layout_rate_garbage(getApplicationContext(),listEXhead,moneyEXhead);
         listViewhead.setAdapter( Name_unithead);
-        ListView listView = findViewById(R.id.list_rate_garbage);
-        layout_rate_garbage Name_unit = new layout_rate_garbage(getApplicationContext(),listEX,moneyEX);
-        listView.setAdapter( Name_unit);
+
 
 
     }

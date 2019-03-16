@@ -5,6 +5,10 @@ import android.os.Bundle;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.util.Log;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Logo extends AppCompatActivity {
 
@@ -21,5 +25,7 @@ public class Logo extends AppCompatActivity {
                 finish();
             }
         }, 1000);
+
+
     }
 }
