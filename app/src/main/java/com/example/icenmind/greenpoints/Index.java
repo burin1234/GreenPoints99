@@ -18,8 +18,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,12 +70,22 @@ public class Index extends AppCompatActivity {
 //            stu1.child("Type").setValue(""+listEX.get(i));
 //            stu1.child("Point").setValue(""+moneyEX.get(i));}
         Log.e("test", "Get Rate Exchange isSuccessful");
-        FirebaseDatabase database = FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
+        FirebaseDatabase database =
+                FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
         DatabaseReference myRef = database.getReference("RateExchange");
-        for(int i = 0 ; i < listEX.size() ; i++){
-            DatabaseReference stu1 = myRef.child(""+(i+1));
-            stu1.child("Type").setValue(""+listEX.get(i));
-            stu1.child("Point").setValue(""+moneyEX.get(i));}
+        Query query1 = myRef.orderByKey();
+        query1.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()){
+                    Log.d("test", ds.getKey() + " => " +
+                            ds.child("Point").getValue());
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
         ListView listViewhead = findViewById(R.id.list_rate_garbage_head);
         layout_rate_garbage Name_unithead = new layout_rate_garbage(getApplicationContext(),listEXhead,moneyEXhead);
         listViewhead.setAdapter( Name_unithead);
