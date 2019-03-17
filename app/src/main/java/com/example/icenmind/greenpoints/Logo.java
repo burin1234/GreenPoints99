@@ -24,7 +24,7 @@ public class Logo extends AppCompatActivity {
                 startActivity(mainIntent);
                 finish();
             }
-        }, 1000);
+        }, 1700);
 
 
     }

@@ -85,7 +85,8 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_signout"
             android:text="Sign out"
-            android:textColor="@android:color/holo_green_dark" />
+            android:textColor="@android:color/holo_green_dark"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

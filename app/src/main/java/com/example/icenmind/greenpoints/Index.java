@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.icenmind.greenpoints.ClassAll.Rate_exchange;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,10 +44,13 @@ public class Index extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index);
+        //header
+        Intent intent = getIntent();
+
+        /*-------------------------------------------------------------*/
+
 
         FirebaseApp.initializeApp(this);
-
-
 
         Button b1 = findViewById(R.id.homes);
         b1.setBackgroundResource(R.drawable.menu_home2);
@@ -61,9 +65,9 @@ public class Index extends AppCompatActivity {
 //            DatabaseReference stu1 = myRef.child(""+(i+1));
 //            stu1.child("Type").setValue(""+listEX.get(i));
 //            stu1.child("Point").setValue(""+moneyEX.get(i));}
+
         Log.e("test", "Get Rate Exchange isSuccessful");
-        FirebaseDatabase database =
-                FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
         DatabaseReference myRef = database.getReference("RateExchange");
         Query query1 = myRef.orderByKey();
         query1.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -87,9 +91,7 @@ public class Index extends AppCompatActivity {
         listViewhead.setAdapter( Name_unithead);
 
 
-
     }
-
 
     public void btnhome(View v){
         Intent mainIntent = new Intent(Index.this, Index.class);

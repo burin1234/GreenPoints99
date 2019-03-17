@@ -19,7 +19,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/b2"
+                android:background="@drawable/b8"
                 android:gravity="center_vertical|center"
                 android:orientation="vertical">
 
@@ -187,7 +187,7 @@
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/btn_upload"
+                        android:id="@+id/btnChoose"
                         android:layout_width="72dp"
                         android:layout_height="24dp"
                         android:layout_marginRight="5dp"
@@ -198,23 +198,10 @@
                         android:textColor="@android:color/background_light"
                         android:textSize="12sp" />
 
-                    <Button
-                        android:id="@+id/btn_takephoto"
-                        android:layout_width="82dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_takeph"
-                        android:onClick="btnTakePhoto"
-                        android:text="Take Photo"
-                        android:textAllCaps="false"
-                        android:textColor="@android:color/background_light"
-                        android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/img_user"
+                    android:id="@+id/imgView"
                     android:layout_width="237dp"
                     android:layout_height="273dp"
                     android:visibility="gone"
