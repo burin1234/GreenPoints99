@@ -267,6 +267,12 @@
                     </LinearLayout>
 
                     <ListView
+                        android:id="@+id/headlist_detail_expoint"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="@color/colorPrimaryDark" />
+
+                    <ListView
                         android:id="@+id/list_detail_expoint"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />

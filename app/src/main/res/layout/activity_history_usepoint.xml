@@ -43,10 +43,19 @@
             android:textStyle="bold" />
 
         <ListView
+            android:id="@+id/headlist_goods_and_service"
             android:layout_width="match_parent"
-            android:layout_height="444dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp" />
+            android:layout_height="51dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/b8" />
+
+        <ListView
+            android:id="@+id/list_goods_and_service"
+            android:layout_width="match_parent"
+            android:layout_height="347dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

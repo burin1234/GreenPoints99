@@ -48,7 +48,7 @@
             android:layout_width="250dp"
             android:layout_height="43dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/signin"
+            android:background="@drawable/b2"
             android:onClick="OnClick_sign_in"
             android:text="Sign in"
             android:textAllCaps="false"

@@ -46,6 +46,8 @@ public class Index extends AppCompatActivity {
         setContentView(R.layout.activity_index);
         //header
         Intent intent = getIntent();
+        String iduser = intent.getStringExtra("id");
+        Log.e("",""+iduser);
 
         /*-------------------------------------------------------------*/
 
@@ -55,8 +57,8 @@ public class Index extends AppCompatActivity {
         Button b1 = findViewById(R.id.homes);
         b1.setBackgroundResource(R.drawable.menu_home2);
 
-        listEXhead.add("ประเภท");
-        moneyEXhead.add("ขีด : แต้ม");
+        listEXhead.add("Type");
+        moneyEXhead.add("g : point");
 
 //        Log.e("test", "login isSuccessful");
 //        FirebaseDatabase database = FirebaseDatabase.getInstance("https://greenpoints-it411.firebaseio.com/");
